@@ -11,23 +11,31 @@ public class VentanaSaludo {
         ventana.setLayout(null);
 
         JTextField campotexto = new JTextField();
-        campotexto.setBounds(100,60,200,25);
+        campotexto.setBounds(100, 60, 200, 25);
+
 
         JButton botonSaludar = new JButton("Saludar");
         botonSaludar.setBounds(300, 60, 100, 25);
+        campotexto.addKeyListener (new keyAdapter() {
+            public void KeyPressed (KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER ) {
+                    botonSaludar.doClick();
+                }
+            }
+        });
 
         JLabel etiquetaSaludo = new JLabel("");
-        etiquetaSaludo.setBounds(100, 200, 300, 25 );
+        etiquetaSaludo.setBounds(100, 200, 300, 25);
 
         botonSaludar.addActionListener(_ -> {
             String nombre = campotexto.getText();
-            etiquetaSaludo.setText("Hola: " + nombre );
-                if (nombre.trim(). isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "Debe ingresar un nombre");
-                } else {
-                    etiquetaSaludo.setText("Hola: " + nombre);
-                }
-        }
+            if (nombre.trim().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Debe ingresar un nombre");
+            } else {
+                        etiquetaSaludo.setText("Hola: "+ nombre);
+            }
+
+        });
 
         ventana.add(campotexto);
         ventana.add(botonSaludar);
