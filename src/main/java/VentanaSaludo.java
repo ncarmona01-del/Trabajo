@@ -9,9 +9,7 @@ public class VentanaSaludo {
         ventana.setSize(600, 500);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setLayout(null);
-
-
-
+        ventana.getContentPane().setBackground(Color.decode("#41a0b3"));
 
 
         JTextField campoTexto = new JTextField();
@@ -50,12 +48,7 @@ public class VentanaSaludo {
     }
 }
 
-public class Usuario {
-    public static void main(String[] args) {
-        public void getSaludo;
 
-    }
-}
 
 
 
