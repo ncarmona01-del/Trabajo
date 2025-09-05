@@ -10,34 +10,38 @@ public class VentanaSaludo {
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setLayout(null);
 
-        JTextField campotexto = new JTextField();
-        campotexto.setBounds(100, 60, 200, 25);
+
+        JTextField campoTexto = new JTextField();
+        campoTexto.setBounds(100, 60, 200, 25);
 
 
         JButton botonSaludar = new JButton("Saludar");
         botonSaludar.setBounds(300, 60, 100, 25);
-        campotexto.addKeyListener (new keyAdapter() {
-            public void KeyPressed (KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_ENTER ) {
-                    botonSaludar.doClick();
-                }
-            }
-        });
+
+
 
         JLabel etiquetaSaludo = new JLabel("");
         etiquetaSaludo.setBounds(100, 200, 300, 25);
 
         botonSaludar.addActionListener(_ -> {
-            String nombre = campotexto.getText();
+            String nombre = campoTexto.getText();
             if (nombre.trim().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Debe ingresar un nombre");
             } else {
-                        etiquetaSaludo.setText("Hola: "+ nombre);
+                etiquetaSaludo.setText("Hola: "+ nombre);
             }
 
         });
 
-        ventana.add(campotexto);
+campoTexto.addKeyListener (new KeyAdapter() {
+    public void keyPressed (KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ENTER ) {
+            botonSaludar.doClick();
+                }
+            }
+        });
+
+        ventana.add(campoTexto);
         ventana.add(botonSaludar);
         ventana.add(etiquetaSaludo);
         ventana.setLocationRelativeTo(null);
