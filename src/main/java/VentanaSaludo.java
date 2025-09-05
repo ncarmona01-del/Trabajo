@@ -17,7 +17,13 @@ public class VentanaSaludo {
 
         JButton botonSaludar = new JButton("Saludar");
         botonSaludar.setBounds(300, 60, 100, 25);
-
+        campoTexto.addKeyListener (new KeyAdapter() {
+            public void keyPressed (KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER ) {
+                    botonSaludar.doClick();
+                }
+            }
+        });
 
 
         JLabel etiquetaSaludo = new JLabel("");
@@ -33,13 +39,7 @@ public class VentanaSaludo {
 
         });
 
-campoTexto.addKeyListener (new KeyAdapter() {
-    public void keyPressed (KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_ENTER ) {
-            botonSaludar.doClick();
-                }
-            }
-        });
+
 
         ventana.add(campoTexto);
         ventana.add(botonSaludar);
