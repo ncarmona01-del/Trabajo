@@ -11,6 +11,9 @@ public class VentanaSaludo {
         ventana.setLayout(null);
 
 
+
+
+
         JTextField campoTexto = new JTextField();
         campoTexto.setBounds(100, 60, 200, 25);
 
@@ -39,8 +42,6 @@ public class VentanaSaludo {
 
         });
 
-
-
         ventana.add(campoTexto);
         ventana.add(botonSaludar);
         ventana.add(etiquetaSaludo);
@@ -48,4 +49,15 @@ public class VentanaSaludo {
         ventana.setVisible(true);
     }
 }
+
+public class Usuario {
+    public static void main(String[] args) {
+        public void getSaludo;
+
+    }
+}
+
+
+
+
 
